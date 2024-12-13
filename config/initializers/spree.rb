@@ -1,3 +1,8 @@
+require 'spree/core'
+
+# require 'spree/app/models/spree/promotion'
+# require 'spree/promotion_handler'
+
 # Configure Spree Preferences
 #
 # Note: Initializing preferences available within the Admin will overwrite any changes that were made through the user interface when you restart.
@@ -5,7 +10,7 @@
 #
 # Note: If a preference is set here it will be stored within the cache & database upon initialization.
 #       Just removing an entry from this initializer will not make the preference value go away.
-#       Instead you must either set a new value or remove entry, clear cache, and remove database entry.
+#       Instead, you must either set a new value or remove entry, clear cache, and remove database entry.
 #
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
@@ -30,3 +35,14 @@ end
 # Spree::Api::Dependencies.storefront_cart_serializer = 'MyRailsApp::CartSerializer'
 
 Spree.user_class = "Spree::User"
+
+# Autoload custom promotion rules and actions
+Rails.application.config.to_prepare do
+  require_dependency 'spree/promotion/rules/buy_x_get_y_rule'
+  require_dependency 'spree/promotion/actions/add_free_product'
+end
+
+# Spree::Promotion::Rules.add_class('Spree::Promotion::Rules::BuyXGetYRule')
+# Spree::Promotion::Actions.add_class('Spree::Promotion::Actions::AddFreeProduct')
+
+
