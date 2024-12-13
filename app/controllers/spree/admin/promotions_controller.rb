@@ -1,3 +1,4 @@
+# app/controllers/spree/admin/promotions_controller.rb
 module Spree
   module Admin
     class PromotionsController < Spree::Admin::BaseController

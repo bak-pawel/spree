@@ -1,0 +1,26 @@
+<!-- app/views/spree/admin/promotions/index.html.erb -->
+<h1><%= Spree.t(:promotions) %></h1>
+
+<%= link_to_with_icon 'icon-plus', Spree.t(:new_promotion), new_admin_promotion_path, class: 'btn btn-primary' %>
+
+<table class="index-table">
+  <thead>
+  <tr>
+    <th><%= Spree.t(:name) %></th>
+    <th><%= Spree.t(:description) %></th>
+    <th><%= Spree.t(:actions) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @promotions.each do |promotion| %>
+    <tr>
+      <td><%= promotion.name %></td>
+      <td><%= promotion.description %></td>
+      <td>
+        <%= link_to_with_icon 'icon-edit', Spree.t(:edit), edit_admin_promotion_path(promotion), class: 'btn btn-secondary' %>
+        <%= link_to_with_icon 'icon-delete', Spree.t(:delete), admin_promotion_path(promotion), method: :delete, data: { confirm: Spree.t(:are_you_sure) }, class: 'btn btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
