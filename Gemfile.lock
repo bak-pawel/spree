@@ -292,6 +292,7 @@ GEM
     orm_adapter (0.5.0)
     paranoia (3.0.0)
       activerecord (>= 6, < 8.1)
+    pg (1.5.9)
     popper_js (1.16.1)
     psych (5.1.2)
       stringio
@@ -502,12 +503,6 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (2.0.4-aarch64-linux-gnu)
-    sqlite3 (2.0.4-arm-linux-gnu)
-    sqlite3 (2.0.4-arm64-darwin)
-    sqlite3 (2.0.4-x86-linux-gnu)
-    sqlite3 (2.0.4-x86_64-darwin)
-    sqlite3 (2.0.4-x86_64-linux-gnu)
     state_machines (0.6.0)
     state_machines-activemodel (0.9.0)
       activemodel (>= 6.0)
@@ -568,6 +563,7 @@ DEPENDENCIES
   jbuilder
   mini_racer
   mission_control-jobs
+  pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.4)
   sassc!
@@ -583,7 +579,6 @@ DEPENDENCIES
   spree_i18n
   spree_sample
   sprockets-rails
-  sqlite3 (>= 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
